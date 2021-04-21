@@ -47,9 +47,9 @@ void setTime() {
     cin>>hour>>minute>>second;
 }
 int countDownMeter() {
-    
+
     while(1) {
-        
+
         if(check()) {
             return 0;
         }
@@ -72,4 +72,6 @@ int countDownMeter() {
             }
         }
     }
+
+    
 }
