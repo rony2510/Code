@@ -19,6 +19,7 @@ int main() {
     return 0;
 }
 void timer() {
+    cout<<"TIMER"<<endl;
     while(1) {
         showTimer();
         sleep(1);
@@ -38,7 +39,5 @@ void timer() {
     }
 }
 void showTimer() {
-    // system("cls");
-	cout<<"TIMER"<<endl;
 	cout<<days<<"|"<<hours<<"|"<<minutes<<"|"<<seconds<<endl;
 }

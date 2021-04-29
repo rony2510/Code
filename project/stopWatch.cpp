@@ -26,13 +26,19 @@ int main() {
 }
 void setTime() {
     cin>>hour>>minute>>second;
+    for(int i=1;i<=5;++i){
+        cout<<"\n";
+    }
 }
 int stopWatch() {
     
     while(1) {
-        cout<<hours<<"|"<<minutes<<"|"<<seconds<<"\t\t";
-        cout<<hour-hours<<"|"<<minute-minutes<<"|"<<second-seconds<<endl;
+        cout<<setfill(' ')<<setw(30)<<hours<<"|"<<minutes<<"|"<<seconds<<"\t\t\n";
+        // cout<<hour-hours<<"|"<<minute-minutes<<"|"<<second-seconds<<endl;
         if(check()) {
+            for(int i=1;i<=5;++i){
+                cout<<"\n";
+            }
             cout<<setfill(' ')<<setw(30)<<"TIMES UP!"<<endl;
             return 0;
         }
