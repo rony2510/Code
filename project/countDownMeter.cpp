@@ -2,10 +2,10 @@
 c++ codes(program) of a simple non-animated countdown meter!
 */
 #include <bits/stdc++.h>
-#include <iostream>
-#include <stdlib.h>
-#include <iomanip>
-#include <windows.h>
+// #include <iostream>
+// #include <stdlib.h>
+// #include <iomanip>
+// #include <windows.h>
 #include <unistd.h>
 using namespace std;
 
@@ -16,6 +16,9 @@ int hour,minute,second;
 
 int countDownMeter();
 void setTime();
+
+
+
 bool check() {
 
     cout<<setfill(' ')<<setw(20);
@@ -55,23 +58,28 @@ int countDownMeter() {
         }
 
         sleep(1);
-
         --second;
-        if(second==0) {
-            if(check()) {
-                return 0;
+
+        if(second==0){
+            if(minute==0){
+                if(hour>0){
+                    if(check()) {
+                        return 0;
+                    }
+                    sleep(1);
+                    --hour;
+                    minute=59;
+                    second=59;
+                }
             }
-            --minute;
-            second=60;
-            if(minute==0) {
+            else{
                 if(check()) {
                     return 0;
                 }
-                --hour;
-                minute=59;
+                sleep(1);
+                --minute;
+                second=59;
             }
         }
     }
-
-    
 }
